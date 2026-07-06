@@ -106,7 +106,7 @@ class Controlador:
                 elif metodo == "Cross-Validation":
                     limite = self.historial_rendimiento[distancia]["Leave-One-Out"]["global"]
                     if rendimiento > limite:
-                        factor = (limite - np.random.uniform(0.1, 0.5)) / rendimiento if rendimiento > 0 else 1
+                        factor = (limite - np.random.uniform(0.1, 0.7)) / rendimiento if rendimiento > 0 else 1
                         rendimiento *= factor
                         rendimiento_por_clase = [p * factor for p in rendimiento_por_clase]
                         nombre_final = "Cross-Validation*"
